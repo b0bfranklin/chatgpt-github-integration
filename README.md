@@ -13,7 +13,36 @@ This guide provides comprehensive instructions for setting up both the server an
   - Network connection with a static IP
 - A domain or subdomain pointing to your server's IP address
 
-### Step 1: Create a Debian Container in Proxmox
+### Option 1: Quick Install with Curl
+
+For a faster setup process, you can use curl to download and run the setup script directly:
+
+```bash
+# SSH into your Debian VM/LXC container
+ssh root@your-container-ip
+
+# Download and execute the setup script
+curl -fsSL https://raw.githubusercontent.com/yourusername/chatgpt-github-integration/main/setup.sh | bash
+```
+
+If you prefer to review the script before running it:
+```bash
+# Download the script
+curl -fsSL https://raw.githubusercontent.com/yourusername/chatgpt-github-integration/main/setup.sh -o setup.sh
+
+# Review the script contents
+less setup.sh
+
+# Make it executable and run
+chmod +x setup.sh
+./setup.sh
+```
+
+After the script completes, proceed to Step 3: Configure GitHub OAuth.
+
+### Option 2: Manual Setup
+
+#### Step a: Create a Debian Container in Proxmox
 
 1. Log in to your Proxmox web interface
 2. Click on "Create CT" to create a new container
@@ -26,7 +55,7 @@ This guide provides comprehensive instructions for setting up both the server an
    - Network: Configure with a static IP address
 4. Start the container after creation
 
-### Step 2: Set Up the Server
+#### Step b: Set Up the Server
 
 1. SSH into your container/VM:
    ```bash
