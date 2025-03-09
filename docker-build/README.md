@@ -16,6 +16,7 @@ This repository contains Docker configurations for running the ChatGPT-GitHub In
 │   └── .env.example           # Environment variables template
 ├── build-extension.sh         # Script to prepare extension files
 └── README.md                  # This file
+└── update.sh                  # Update script for docker container
 ```
 
 ## Getting Started
